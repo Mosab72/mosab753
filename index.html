@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة عقود الاعتماد الأكاديمي</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <rect width="60" height="60" rx="8" fill="#2E7D32"/>
+                            <path d="M30 15L45 25V40L30 50L15 40V25L30 15Z" stroke="white" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="30" r="8" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h1>نظام إدارة عقود الاعتماد الأكاديمي</h1>
+                        <p>المركز الوطني للتقويم والاعتماد الأكاديمي</p>
+                    </div>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalContracts">445</div>
+                        <div class="stat-label">إجمالي العقود</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-view="dashboard">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M3 4h4v12H3V4zm6 0h4v6h-4V4zm6 0h2v12h-2V4zM9 12h4v4H9v-4z"/>
+                    </svg>
+                    لوحة المعلومات
+                </button>
+                <button class="nav-tab" data-view="timeline">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm1-9H9v4l3.5 2.08.75-1.23-2.25-1.35V7z"/>
+                    </svg>
+                    التوزيع الزمني
+                </button>
+                <button class="nav-tab" data-view="universities">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 2L2 7v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V7l-8-5z"/>
+                    </svg>
+                    الجامعات
+                </button>
+                <button class="nav-tab" data-view="departments">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 4h16v2H2V4zm0 5h16v2H2V9zm0 5h16v2H2v-2z"/>
+                    </svg>
+                    الإدارات
+                </button>
+                <button class="nav-tab" data-view="specializations">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm3 11h-2v2H9v-2H7v-2h2V9h2v2h2v2z"/>
+                    </svg>
+                    التخصصات
+                </button>
+                <button class="nav-tab" data-view="contracts">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M5 2h10l4 4v12H1V2h4zm0 2v12h10V6h-4V4H5z"/>
+                    </svg>
+                    جميع العقود
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Dashboard View -->
+            <div id="dashboardView" class="view active">
+                <div class="stats-grid">
+                    <div class="stat-box stat-box-primary">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l-8 4v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6l-8-4z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="stat-ended">0</div>
+                            <div class="stat-title">منتهية أو قريبة من الانتهاء</div>
+                            <div class="stat-subtitle">تنتهي قبل نهاية 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-box stat-box-warning">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13 2h-2v9H2v2h9v9h2v-9h9v-2h-9V2z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="stat-h1-2025">0</div>
+                            <div class="stat-title">تنتهي في النصف الأول 2025</div>
+                            <div class="stat-subtitle">يناير - يونيو 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-box stat-box-info">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="stat-h2-2025">0</div>
+                            <div class="stat-title">تنتهي في النصف الثاني 2025</div>
+                            <div class="stat-subtitle">يوليو - ديسمبر 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-box stat-box-success">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="stat-2026">0</div>
+                            <div class="stat-title">تنتهي في 2026</div>
+                            <div class="stat-subtitle">سنة كاملة أو أكثر متبقية</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>توزيع العقود على الجامعات</h3>
+                            <span class="chart-subtitle">حسب عدد العقود</span>
+                        </div>
+                        <div id="universityChart" class="chart-container"></div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>توزيع العقود على الإدارات</h3>
+                            <span class="chart-subtitle">الإدارات المختصة</span>
+                        </div>
+                        <div id="departmentChart" class="chart-container"></div>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card chart-card-full">
+                        <div class="chart-header">
+                            <h3>توزيع الدرجات العلمية</h3>
+                            <span class="chart-subtitle">بكالوريوس، ماجستير، دكتوراه، دبلوم</span>
+                        </div>
+                        <div id="degreeChart" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline View -->
+            <div id="timelineView" class="view">
+                <div class="timeline-container">
+                    <div class="timeline-header">
+                        <h2>التوزيع الزمني للعقود</h2>
+                        <div class="timeline-filters">
+                            <select id="timelineFilter" class="filter-select">
+                                <option value="all">جميع الفترات</option>
+                                <option value="ended">منتهية قبل 2025</option>
+                                <option value="h1-2025">النصف الأول 2025</option>
+                                <option value="h2-2025">النصف الثاني 2025</option>
+                                <option value="2026">2026 وما بعد</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="timelineContent" class="timeline-content"></div>
+                </div>
+            </div>
+
+            <!-- Universities View -->
+            <div id="universitiesView" class="view">
+                <div class="section-header">
+                    <h2>الجامعات والعقود</h2>
+                    <input type="text" id="universitySearch" class="search-input" placeholder="ابحث عن جامعة...">
+                </div>
+                <div id="universitiesList" class="cards-grid"></div>
+            </div>
+
+            <!-- Departments View -->
+            <div id="departmentsView" class="view">
+                <div class="section-header">
+                    <h2>الإدارات المختصة</h2>
+                </div>
+                <div id="departmentsList" class="cards-grid"></div>
+            </div>
+
+            <!-- Specializations View -->
+            <div id="specializationsView" class="view">
+                <div class="section-header">
+                    <h2>التخصصات</h2>
+                    <select id="specializationFilter" class="filter-select">
+                        <option value="all">جميع التخصصات</option>
+                        <option value="engineering">التخصصات الهندسية وعلوم الحاسب</option>
+                        <option value="health">التخصصات الصحية</option>
+                        <option value="humanities">العلوم الإنسانية والتربوية</option>
+                        <option value="islamic">العلوم الإسلامية والعربية</option>
+                        <option value="science">التخصصات العلمية</option>
+                    </select>
+                </div>
+                <div id="specializationsList" class="cards-grid"></div>
+            </div>
+
+            <!-- Contracts View -->
+            <div id="contractsView" class="view">
+                <div class="section-header">
+                    <h2>جميع العقود (445)</h2>
+                    <div class="filters-group">
+                        <input type="text" id="contractSearch" class="search-input" placeholder="ابحث في العقود...">
+                        <select id="contractUniversityFilter" class="filter-select">
+                            <option value="all">جميع الجامعات</option>
+                        </select>
+                        <select id="contractDepartmentFilter" class="filter-select">
+                            <option value="all">جميع الإدارات</option>
+                        </select>
+                        <select id="contractDegreeFilter" class="filter-select">
+                            <option value="all">جميع الدرجات</option>
+                            <option value="بكالوريوس">بكالوريوس</option>
+                            <option value="ماجستير">ماجستير</option>
+                            <option value="دكتوراه">دكتوراه</option>
+                            <option value="دبلوم">دبلوم</option>
+                            <option value="ماجستير تنفيذي">ماجستير تنفيذي</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="contractsList" class="contracts-table-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contract Details Modal -->
+    <div id="contractModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">تفاصيل العقد</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 المركز الوطني للتقويم والاعتماد الأكاديمي - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script src="contracts_data_full.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعليمات الاستخدام - نظام إدارة العقود</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #2E7D32;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2E7D32;
+        }
+        .section h3 {
+            color: #388E3C;
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+        .files-list {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .file-item {
+            padding: 12px;
+            background: white;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-right: 4px solid #2E7D32;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .file-name {
+            font-weight: 600;
+            color: #1B5E20;
+        }
+        .file-desc {
+            color: #757575;
+            font-size: 14px;
+        }
+        .step {
+            background: #E8F5E9;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-right: 5px solid #4CAF50;
+        }
+        .step-number {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .warning {
+            background: #FFF3E0;
+            border-right: 5px solid #F57C00;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-icon {
+            color: #F57C00;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .success {
+            background: #E8F5E9;
+            border-right: 5px solid #4CAF50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            background: #2E7D32;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background: #1B5E20;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+        .button-secondary {
+            background: #757575;
+        }
+        .button-secondary:hover {
+            background: #424242;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #D32F2F;
+        }
+        .footer {
+            background: #1B5E20;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 نظام إدارة عقود الاعتماد الأكاديمي</h1>
+            <p>تعليمات الاستخدام والإعداد الكامل</p>
+        </div>
+        
+        <div class="content">
+            <div class="warning">
+                <span class="warning-icon">⚠️</span>
+                <strong>تنبيه مهم:</strong> الملفات الحالية تحتوي على عينة صغيرة من البيانات فقط.
+                يجب عليك إضافة بياناتك الكاملة (445 عقد) لتفعيل جميع المميزات.
+            </div>
+            
+            <div class="section">
+                <h2>📁 الملفات المضمنة</h2>
+                <div class="files-list">
+                    <div class="file-item">
+                        <div>
+                            <div class="file-name">index.html</div>
+                            <div class="file-desc">الصفحة الرئيسية للنظام</div>
+                        </div>
+                        <span>✅</span>
+                    </div>
+                    <div class="file-item">
+                        <div>
+                            <div class="file-name">styles.css</div>
+                            <div class="file-desc">ملف التنسيق الكامل</div>
+                        </div>
+                        <span>✅</span>
+                    </div>
+                    <div class="file-item">
+                        <div>
+                            <div class="file-name">script.js</div>
+                            <div class="file-desc">الوظائف الرئيسية للنظام</div>
+                        </div>
+                        <span>✅</span>
+                    </div>
+                    <div class="file-item">
+                        <div>
+                            <div class="file-name">contracts_data_full.js</div>
+                            <div class="file-desc">ملف البيانات (يحتاج إلى تحديث)</div>
+                        </div>
+                        <span>⚠️</span>
+                    </div>
+                    <div class="file-item">
+                        <div>
+                            <div class="file-name">convert_to_js.py</div>
+                            <div class="file-desc">أداة تحويل البيانات</div>
+                        </div>
+                        <span>🔧</span>
+                    </div>
+                    <div class="file-item">
+                        <div>
+                            <div class="file-name">README.md</div>
+                            <div class="file-desc">الدليل الكامل</div>
+                        </div>
+                        <span>📖</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🚀 خطوات الإعداد السريع</h2>
+                
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>تحضير البيانات:</strong>
+                    افتح ملف Excel الخاص بك وانسخ جميع البيانات (445 عقد)
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>لصق البيانات:</strong>
+                    الصق البيانات في ملف <code>raw_contracts.txt</code>
+                    (تأكد من أن الأعمدة مفصولة بـ Tab)
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>تشغيل أداة التحويل:</strong>
+                    قم بتشغيل الأمر: <code>python3 convert_to_js.py</code>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>فتح النظام:</strong>
+                    افتح ملف <code>index.html</code> في المتصفح
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>✨ المميزات الرئيسية</h2>
+                
+                <h3>1. لوحة المعلومات</h3>
+                <ul>
+                    <li>إحصائيات شاملة للتوزيع الزمني</li>
+                    <li>رسوم بيانية تفاعلية للجامعات</li>
+                    <li>توزيع على الإدارات والدرجات العلمية</li>
+                </ul>
+                
+                <h3>2. التوزيع الزمني</h3>
+                <ul>
+                    <li>عرض العقود حسب تاريخ الانتهاء</li>
+                    <li>فلترة حسب الفترة الزمنية</li>
+                    <li>تنبيهات للعقود المنتهية</li>
+                </ul>
+                
+                <h3>3. الجامعات والتخصصات</h3>
+                <ul>
+                    <li>عرض تفصيلي لكل جامعة</li>
+                    <li>توزيع التخصصات حسب المجالات</li>
+                    <li>بحث وفلترة متقدمة</li>
+                </ul>
+                
+                <h3>4. جدول العقود الشامل</h3>
+                <ul>
+                    <li>جدول تفاعلي بجميع العقود</li>
+                    <li>فلترة متعددة المعايير</li>
+                    <li>تفاصيل كاملة لكل عقد</li>
+                </ul>
+            </div>
+            
+            <div class="success">
+                <strong>✅ جاهز للاستخدام:</strong>
+                بمجرد إضافة البيانات الكاملة، سيعمل النظام تلقائياً ويعرض:
+                <ul style="margin-top: 10px;">
+                    <li>✓ جميع الـ 445 عقد</li>
+                    <li>✓ تحليل شامل للبيانات</li>
+                    <li>✓ رسوم بيانية محدثة</li>
+                    <li>✓ إحصائيات دقيقة</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>🔗 الروابط المفيدة</h2>
+                <a href="index.html" class="button">🏠 فتح النظام</a>
+                <a href="README.md" class="button button-secondary">📖 قراءة الدليل</a>
+            </div>
+            
+            <div class="section">
+                <h2>📞 الدعم الفني</h2>
+                <p>لأي استفسارات أو مساعدة:</p>
+                <ul>
+                    <li>📧 البريد الإلكتروني: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4a393f3a3a25383e0a2f3e2f29642d253c64392b">[email&#160;protected]</a></li>
+                    <li>🌐 الموقع الرسمي: www.etec.gov.sa</li>
+                    <li>📞 الهاتف: 920000973</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 المركز الوطني للتقويم والاعتماد الأكاديمي</p>
+            <p>جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
